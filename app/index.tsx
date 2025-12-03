@@ -1,6 +1,7 @@
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { useCallback, useMemo, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Header } from "../components/Header";
 import { Receipt } from "../components/Receipt";
 
 export default function Index() {
@@ -33,6 +34,7 @@ export default function Index() {
         backgroundStyle={{ backgroundColor: "#f2f2f2" }}
       >
         <BottomSheetView style={styles.contentContainer}>
+          <Header />
           <Receipt sheetIndex={sheetIndex} />
         </BottomSheetView>
       </BottomSheet>
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    alignItems: "center",
+    alignItems: "stretch",
     paddingTop: 20,
   },
 });
