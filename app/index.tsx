@@ -1,14 +1,17 @@
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
-import { useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Receipt } from "../components/Receipt";
 
 export default function Index() {
+  const [sheetIndex, setSheetIndex] = useState(-1);
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   const snapPoints = useMemo(() => ["90%"], []);
 
   const handleSheetChanges = useCallback((index: number) => {
     console.log("handleSheetChanges", index);
+    setSheetIndex(index);
   }, []);
 
   const handleSnapPress = useCallback(() => {
@@ -27,9 +30,10 @@ export default function Index() {
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
         enablePanDownToClose={true}
+        backgroundStyle={{ backgroundColor: "#f2f2f2" }}
       >
         <BottomSheetView style={styles.contentContainer}>
-          <Text>Awesome Bottom Sheet 🎉</Text>
+          <Receipt sheetIndex={sheetIndex} />
         </BottomSheetView>
       </BottomSheet>
     </View>
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    padding: 36,
     alignItems: "center",
+    paddingTop: 20,
   },
 });
