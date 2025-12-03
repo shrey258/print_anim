@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
   slotContainer: {
     width: "100%",
     alignItems: "center",
-    zIndex: 10,
-    marginBottom: -10,
+    zIndex: 1,
+    marginBottom: 4,
   },
   slot: {
     width: "92%",
@@ -111,14 +111,16 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    elevation: 8,
+    shadowOpacity: 0.4,
+    shadowRadius: 4,
+    elevation: 6,
   },
   paperClipArea: {
     width: "100%",
     alignItems: "center",
     overflow: "hidden",
+    zIndex: 2,
+    marginTop: -12,
   },
   paper: {
     width: "88%",
