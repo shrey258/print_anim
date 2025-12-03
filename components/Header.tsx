@@ -16,7 +16,7 @@ const marquee = {
   },
 };
 
-export const Header = ({ title = "SHREY", count = 24 }: HeaderProps) => {
+export const Header = ({ title = "SHREY", count = 25 }: HeaderProps) => {
   return (
     <View style={styles.container}>
       {/* Title Pill */}
