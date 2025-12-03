@@ -9,29 +9,41 @@ interface HeaderProps {
 
 const marquee = {
   from: {
-    transform: [{translateX: 0}], 
+    transform: [{ translateX: 0 }],
   },
   to: {
-    transform: [{translateX: -100}], 
-  }
-}
+    transform: [{ translateX: -100 }],
+  },
+};
 
 export const Header = ({ title = "SHREY", count = 24 }: HeaderProps) => {
   return (
     <View style={styles.container}>
       {/* Title Pill */}
-      <Animated.View style={[styles.titlePill, {
-        overflow:"hidden",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-      }]}>
-        <Animated.Text style={[styles.titleText, {
-            // animationName: marquee,
-            // animationDuration: 3000,
-            // animationIterationCount: "infinite",
-            // animationTimingFunction: "linear",
-        }]}>{title}</Animated.Text>
+      <Animated.View
+        style={[
+          styles.titlePill,
+          {
+            overflow: "hidden",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+        ]}
+      >
+        <Animated.Text
+          style={[
+            styles.titleText,
+            {
+              // animationName: marquee,
+              // animationDuration: 3000,
+              // animationIterationCount: "infinite",
+              // animationTimingFunction: "linear",
+            },
+          ]}
+        >
+          {title}
+        </Animated.Text>
       </Animated.View>
 
       {/* Count Pill */}
